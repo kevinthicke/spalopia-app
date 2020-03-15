@@ -57,7 +57,7 @@ describe('ScheduleService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should retrieve Schedule by spaServiceId via GET', (done) => {
+  xit('should retrieve Schedule by spaServiceId via GET', (done) => {
     
     
     service.getScheduleBySpaServiceId(1).subscribe(schedule => {

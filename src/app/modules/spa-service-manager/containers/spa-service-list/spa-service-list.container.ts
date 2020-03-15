@@ -1,29 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BehaviorSubject, merge, Observable, Subject, pipe, combineLatest, Subscription } from 'rxjs';
-import { map, switchMap, tap, filter, withLatestFrom } from 'rxjs/operators';
-import { IScheduleModel } from '../../../../core/models/schedule.model';
-import { OrderType, SpaService } from '../../../../core/services/spa-service/spa-service';
-import { fadeInOut } from '../../../../shared/animations/fade-in-out.animation';
-import { zoomOut } from '../../../../shared/animations/zoom-out.animation';
-import { IListItem } from '../../../../shared/components/list/list.component';
-import { adaptToListItemArray } from '../../utils/adapt-to-list-item';
-import { SpaServiceSelectedService, ISpaServiceMinified } from '../../../../core/services/event-bus/spa-service-selected.service';
-import { filterByIdEqualTo } from '../../utils/filter-by-id-equal-to';
-import { adaptToSpaServiceModel } from '../../../../core/adapters/adapt-to-spa-service-model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, merge, Observable, Subject, Subscription } from 'rxjs';
+import { map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { SubSink } from 'subsink';
-import { ISpaServiceModel } from '../../../../core/models/spa-service.model';
+import { ISpaServiceMinified, SpaServiceSelectedService } from '../../../../core/services/event-bus/spa-service-selected.service';
+import { OrderType, SpaService } from '../../../../core/services/spa-service/spa-service.service';
+import { IListItem } from '../../../../shared/components/list/list.component';
+import { adaptToListItemArray } from '../../utils/adapt-to-list-item/adapt-to-list-item';
+import { joinToBuildSpaServiceMinified } from '../../utils/join-to-build-spa-service-minified/join-to-build-spa-service-minified';
 
-function joinToBuildSpaServiceMinified(
-  [spaServiceId, spaServices]: [number, Array<IListItem> ]
-  ): ISpaServiceMinified {
 
-    const [ spaServiceSelected ] = spaServices.filter(spaService => spaService.id === spaServiceId);
-    
-    return {
-      id: spaServiceSelected.id,
-      name: spaServiceSelected.header
-    }
-}
 
 @Component({
   selector: 'app-spa-service-list-container',

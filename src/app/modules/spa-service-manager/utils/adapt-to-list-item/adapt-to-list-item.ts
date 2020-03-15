@@ -1,5 +1,5 @@
-import { ISpaServiceModel } from '../../../core/models/spa-service.model';
-import { IListItem } from '../../../shared/components/list/list.component';
+import { ISpaServiceModel } from '../../../../core/models/spa-service.model';
+import { IListItem } from '../../../../shared/components/list/list.component';
 
 export function adaptToListItem(spaService: ISpaServiceModel): IListItem {
     

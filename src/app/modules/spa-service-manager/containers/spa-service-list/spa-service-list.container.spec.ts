@@ -3,15 +3,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SpaServiceListContainer } from './spa-service-list.container';
 import { HttpClientModule } from '@angular/common/http';
 import { SpaServiceSelectedService } from '../../../../core/services/event-bus/spa-service-selected.service';
-import { SpaService } from '../../../../core/services/spa-service/spa-service';
+
 import { of } from 'rxjs';
 import { ListToolbarComponent } from '../../components/list-toolbar/list-toolbar.component';
 import { TimeTablePopupContainer } from '../time-table-popup/time-table-popup.container';
 import { TimeTablePopupComponent } from '../../components/time-table-popup/time-table-popup.component';
 import { SharedModule } from '../../../../shared/shared.module';
-import { adaptToListItemArray } from '../../utils/adapt-to-list-item';
+import { adaptToListItemArray } from '../../utils/adapt-to-list-item/adapt-to-list-item';
 import { doesNotThrow } from 'assert';
 import { toArray } from 'rxjs/operators';
+import { SpaService } from 'src/app/core/services/spa-service/spa-service.service';
 
 const spaServicesMocked = [
   {

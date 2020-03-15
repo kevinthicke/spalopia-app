@@ -1,5 +1,5 @@
-import { ISpaServiceModel } from '../../../core/models/spa-service.model';
-import { IListItem } from '../../../shared/components/list/list.component';
+import { ISpaServiceModel } from '../../../../core/models/spa-service.model';
+import { IListItem } from '../../../../shared/components/list/list.component';
 import { adaptToListItem, adaptToListItemArray } from './adapt-to-list-item';
 
 const spaServicesMocked: ISpaServiceModel[] = [

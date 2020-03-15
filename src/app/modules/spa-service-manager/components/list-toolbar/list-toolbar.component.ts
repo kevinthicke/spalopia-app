@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { OrderType } from 'src/app/core/services/spa-service/spa-service';
+import { OrderType } from './../../../../core/services/spa-service/spa-service.service';
 
 @Component({
   selector: 'app-list-toolbar',
