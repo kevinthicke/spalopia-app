@@ -8,19 +8,12 @@ import { ScheduleService } from '../../../../core/services/schedule/schedule.ser
 import { SubSink } from 'subsink';
 import { switchMap, tap, filter, withLatestFrom, pluck, map } from 'rxjs/operators';
 
-/* export interface ITimeTable extends IWithId {
-  id: IScheduleModel['id'];
-  spaService: ISpaServiceModel['name'];
-  date: IScheduleModel['date'];
-  ranges: IScheduleModel['ranges'];
-} */
-
 function joinToAddSpaServiceName(
   [schedule, spaServiceEvent]: [IScheduleModel, ISpaServiceEvent]
   ): IScheduleModel {
 
-    schedule[0].spaServiceMini.name = spaServiceEvent.spaService.name;
-    return schedule[0];
+    schedule.spaServiceMini.name = spaServiceEvent.spaService.name;
+    return schedule;
 
 } 
 
