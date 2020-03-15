@@ -1,0 +1,30 @@
+<div *ngIf='schedule' class='card p-3'>
+	<!-- <pre>
+		{{ schedule | json }}
+	</pre> -->
+	<div class='d-flex justify-content-between mt-2 mb-3'>
+		<h5>{{ schedule.spaServiceMini.name }}</h5>
+		<button class='btn btn-danger btn-sm' (click)='closePopup()'>Cerrar</button>
+	</div>
+	<table class="table table-bordered p-1">
+		<thead>
+			<tr>
+				<th>Fecha</th>
+				<th colspan='2'>Horarios</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor='let data of schedule.data'>
+				<td>{{ data.date }}</td>
+				<td *ngFor='let range of data.ranges'>{{ range.start + ' - ' + range.end }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+<div 
+	*ngIf='schedule'
+	class='transparent-glass'
+	@fadeInOut>
+</div>

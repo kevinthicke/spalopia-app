@@ -1,0 +1,10 @@
+<div class='d-flex justify-content-between'>
+    <div>
+        <button class='btn btn-primary m-1' (click)='handleOrderMethod("desc")'>-</button>
+        <button class='btn btn-primary m-1' (click)='handleOrderMethod("asc")'>+</button>
+    </div>
+    <app-search-bar 
+        position='right' 
+        (searchValueEvent)='handleSearchValue($event)'>
+    </app-search-bar>
+</div>

@@ -1,0 +1,57 @@
+{
+  "spa-services": [
+    {
+      "id": 1,
+      "name": "Masaje a 4 manos 60'",
+      "description": "Este tratamiento consta de varias etapas que buscan estimular el cuerpo para la mejor recepción de las propiedades medicinales de los productos orgánicos utilizados, entre los que se destacan el fango, arcillas, algas o chocolate.",
+      "price": 20.5
+    },
+    {
+      "id": 2,
+      "name": "Masaje Facial Relajante 45'",
+      "description": "Masaje facial indicado para reducir tensiones del rostro.",
+      "price": 10.33
+    },
+    {
+      "title": "fdsa",
+      "description": "fds",
+      "id": 3
+    }
+  ],
+  "schedules": [
+    {
+      "id": 1,
+      "spaServiceId": 1,
+      "data": [
+        {
+          "date": "2020-02-01",
+          "ranges": [
+            {
+              "start": "10:00",
+              "end": "16:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "spaServiceId": 2,
+      "data": [
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "11:00",
+              "end": "13:00"
+            },
+            {
+              "start": "14:00",
+              "end": "17:00"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

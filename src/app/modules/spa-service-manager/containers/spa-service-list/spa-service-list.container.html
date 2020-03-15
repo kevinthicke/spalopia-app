@@ -1,0 +1,14 @@
+<div class='pt-2 pl-5 pr-5'>
+    
+    <app-list-toolbar
+        (searchValueEvent)='this.filterSpaServices$.next($event)'
+        (orderMethodEvent)='this.sortSpaServices$.next($event)'>
+    </app-list-toolbar>
+    
+    <app-list
+        [items]='spaServices$ | async'
+        buttonLabel='Más Info'
+        (selectedItemEvent)='selectSpaServiceId$.next($event)'>
+    </app-list>
+
+</div>

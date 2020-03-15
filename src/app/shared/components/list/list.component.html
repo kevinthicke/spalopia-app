@@ -1,0 +1,12 @@
+<ul class='list-group'>
+    <app-list-item 
+        class='mt-1 mb-1'
+        *ngFor='let item of items'
+        [headerText]='item.header'
+        [bodyText]='item.body'
+        [extraInfo]='item.extraInfo'
+        buttonText='Mas Info'
+        buttonClass='btn btn-success'
+        (buttonClickEvent)='handleSelectedItem(item.id)'>
+    </app-list-item>
+</ul>
