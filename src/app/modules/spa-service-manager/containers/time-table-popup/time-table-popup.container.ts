@@ -1,21 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, of, Subject, combineLatest } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { filter, map, pluck, switchMap, withLatestFrom } from 'rxjs/operators';
 import { IScheduleModel } from '../../../../core/models/schedule.model';
-import { ISpaServiceModel } from '../../../../core/models/spa-service.model';
-import { IWithId } from '../../../../core/models/with-id.model';
-import { SpaServiceSelectedService, ISpaServiceEvent, ISpaServiceMinified } from '../../../../core/services/event-bus/spa-service-selected.service';
+import { SpaServiceSelectedService } from '../../../../core/services/event-bus/spa-service-selected.service';
 import { ScheduleService } from '../../../../core/services/schedule/schedule.service';
-import { SubSink } from 'subsink';
-import { switchMap, tap, filter, withLatestFrom, pluck, map } from 'rxjs/operators';
+import { joinToAddSpaServiceName } from '../../utils/join-to-add-spa-service-name';
 
-function joinToAddSpaServiceName(
-  [schedule, spaServiceEvent]: [IScheduleModel, ISpaServiceEvent]
-  ): IScheduleModel {
 
-    schedule.spaServiceMini.name = spaServiceEvent.spaService.name;
-    return schedule;
-
-} 
 
 @Component({
   selector: 'app-time-table-popup-container',
@@ -33,7 +24,14 @@ export class TimeTablePopupContainer implements OnInit {
 
   ngOnInit(): void {
     
-    const spaServiceSelectedId$ = this.spaServiceSelectedService
+    const spaServiceSelectedId$ = this.getSpaServiceSelectedId();
+    this.schedule$ = this.retrieveSchedule(spaServiceSelectedId$);
+
+  };
+
+  getSpaServiceSelectedId(): Observable<number> {
+
+    return this.spaServiceSelectedService
       .spaServiceSelectedChanged$
       .pipe(
         filter(Boolean),
@@ -41,13 +39,17 @@ export class TimeTablePopupContainer implements OnInit {
         pluck('id')
       );
 
-    this.schedule$ = spaServiceSelectedId$.pipe(
+  }
+
+  retrieveSchedule(spaServiceSelectedId$: Observable<number>): Observable<IScheduleModel> {
+
+    return spaServiceSelectedId$.pipe(
       switchMap(this.scheduleService.getScheduleBySpaServiceId),
       withLatestFrom(this.spaServiceSelectedService.spaServiceSelectedChanged$),
       map(joinToAddSpaServiceName)
     );
 
-  };
+  }
 
 };
 

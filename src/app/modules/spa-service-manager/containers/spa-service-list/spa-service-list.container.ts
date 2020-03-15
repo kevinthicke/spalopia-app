@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BehaviorSubject, merge, Observable, Subject, pipe, combineLatest } from 'rxjs';
+import { BehaviorSubject, merge, Observable, Subject, pipe, combineLatest, Subscription } from 'rxjs';
 import { map, switchMap, tap, filter, withLatestFrom } from 'rxjs/operators';
 import { IScheduleModel } from '../../../../core/models/schedule.model';
 import { OrderType, SpaService } from '../../../../core/services/spa-service/spa-service';
@@ -48,23 +48,17 @@ export class SpaServiceListContainer implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.setSpaServiceObs();
-
-    this.subSink.sink = this.selectSpaServiceId$
-      .pipe(
-        withLatestFrom(this.spaServices$),
-        map(joinToBuildSpaServiceMinified),
-        tap(this.spaServiceSelectedService.selectSpaService)
-      ).subscribe()
+    this.spaServices$ = this.getSpaServiceObs();
+    this.subSink.sink = this.getSpaServiceSelectionSubscription(this.spaServices$);
     
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subSink.unsubscribe();
   }
 
 
-  private setSpaServiceObs(): void {
+  getSpaServiceObs(): Observable<IListItem[]> {
 
     const spaServicesComplete$ = this.totalSpaServices$.pipe(
       switchMap(this.spaService.getAll),
@@ -78,14 +72,24 @@ export class SpaServiceListContainer implements OnInit, OnDestroy {
       switchMap(this.spaService.getSortedBy('price'))
     )
 
-    this.spaServices$ = merge(
-      spaServicesComplete$,
-      spaServicesFiltered$,
-      spaServicesSorted$
-    ).pipe(
-      map(adaptToListItemArray)
-    );
+    return merge(
+        spaServicesComplete$,
+        spaServicesFiltered$,
+        spaServicesSorted$
+      ).pipe(
+        map(adaptToListItemArray)
+      );
 
+  }
+
+  getSpaServiceSelectionSubscription(spaServices$: Observable<IListItem[]>): Subscription {
+
+    return this.selectSpaServiceId$
+      .pipe(
+        withLatestFrom(spaServices$),
+        map(joinToBuildSpaServiceMinified),
+        tap(this.spaServiceSelectedService.selectSpaService)
+      ).subscribe()
   }
 
 }
