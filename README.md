@@ -1,11 +1,11 @@
 # A simple Angular App
 
-- Install dependencies:
+Install dependencies:
 
 ```npm i```
-- Run json-server:
+Run json-server:
 
 ```npm run mock-server```
-- Run angular-app:
+Run angular-app:
 
 ```npm run start```
