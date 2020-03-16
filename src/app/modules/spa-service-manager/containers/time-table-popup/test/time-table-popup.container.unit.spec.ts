@@ -1,10 +1,8 @@
-import { TimeTablePopupComponent } from '../../../components/time-table-popup/time-table-popup.component';
+import { IScheduleModel } from '@app-core/models/schedule.model';
+import { ISpaServiceEvent, SpaServiceSelectedService } from '@app-core/services/event-bus/spa-service-selected.service';
+import { ScheduleService } from '@app-core/services/schedule/schedule.service';
+import { of } from 'rxjs';
 import { TimeTablePopupContainer } from '../time-table-popup.container';
-import { SpaService } from 'src/app/core/services/spa-service/spa-service.service';
-import { SpaServiceSelectedService, ISpaServiceEvent } from '../../../../../core/services/event-bus/spa-service-selected.service';
-import { ScheduleService } from '../../../../../core/services/schedule/schedule.service';
-import { of, empty } from 'rxjs';
-import { IScheduleModel } from '../../../../../core/models/schedule.model';
 
 const scheduleMock: IScheduleModel = {
     id: 0,

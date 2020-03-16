@@ -3,9 +3,9 @@
     <div class='card-header d-flex justify-content-between'>
         <span id='header-text'>{{ headerText }}</span>
         <div>
-            <button *ngIf='extraInfo' id='extra-info' class='btn btn-warning mr-1' disabled>
+            <span *ngIf='extraInfo' id='extra-info' class='btn btn-warning mr-1' disabled>
                 {{ extraInfo }}
-            </button>
+            </span>
             <button id='button' [class]='buttonClass' (click)='handleClick()'>
                 {{ buttonText }}
             </button>

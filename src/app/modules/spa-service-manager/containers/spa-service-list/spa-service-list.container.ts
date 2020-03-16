@@ -3,8 +3,8 @@ import { BehaviorSubject, merge, Observable, Subject, Subscription } from 'rxjs'
 import { map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { SubSink } from 'subsink';
 import { ISpaServiceMinified, SpaServiceSelectedService } from '../../../../core/services/event-bus/spa-service-selected.service';
-import { OrderType, SpaService } from '../../../../core/services/spa-service/spa-service.service';
-import { IListItem } from '../../../../shared/components/list/list.component';
+import { OrderType, SpaService } from '@app-core/services/spa-service/spa-service.service';
+import { IListItem } from '@app-shared/components/list/list.component';
 import { adaptToListItemArray } from '../../utils/adapt-to-list-item/adapt-to-list-item';
 import { joinToBuildSpaServiceMinified } from '../../utils/join-to-build-spa-service-minified/join-to-build-spa-service-minified';
 

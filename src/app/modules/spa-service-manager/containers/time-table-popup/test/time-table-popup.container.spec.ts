@@ -1,15 +1,13 @@
-import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-
-import { TimeTablePopupContainer } from '../time-table-popup.container';
-import { SpaServiceListContainer } from '../../spa-service-list/spa-service-list.container';
-import { TimeTablePopupComponent } from '../../../components/time-table-popup/time-table-popup.component';
-import { SharedModule } from '../../../../../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SpaService } from 'src/app/core/services/spa-service/spa-service.service';
-import { SpaServiceSelectedService } from '../../../../../core/services/event-bus/spa-service-selected.service';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SpaServiceSelectedService } from '@app-core/services/event-bus/spa-service-selected.service';
+import { SpaService } from '@app-core/services/spa-service/spa-service.service';
+import { SharedModule } from '@app-shared/shared.module';
 import { ListToolbarComponent } from '../../../components/list-toolbar/list-toolbar.component';
-import { of, Observable, empty } from 'rxjs';
-import { By } from '@angular/platform-browser';
+import { TimeTablePopupComponent } from '../../../components/time-table-popup/time-table-popup.component';
+import { SpaServiceListContainer } from '../../spa-service-list/spa-service-list.container';
+import { TimeTablePopupContainer } from '../time-table-popup.container';
+
  
 describe('TimeTablePopupComponent', () => {
   let component: TimeTablePopupContainer;

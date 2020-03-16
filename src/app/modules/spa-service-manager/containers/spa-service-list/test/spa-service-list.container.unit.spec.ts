@@ -1,9 +1,9 @@
 import { SpaServiceListContainer } from '../spa-service-list.container';
 import { SpaServiceSelectedService } from '../../../../../core/services/event-bus/spa-service-selected.service';
-import { SpaService } from 'src/app/core/services/spa-service/spa-service.service';
-import { ISpaServiceModel } from '../../../../../core/models/spa-service.model';
+import { SpaService } from '@app-core/services/spa-service/spa-service.service';
+import { ISpaServiceModel } from '@app-core/models/spa-service.model';
 import { of } from 'rxjs';
-import { IListItem } from '../../../../../shared/components/list/list.component';
+import { IListItem } from '@app-shared/components/list/list.component';
 
 
 const spaServiceMock1: ISpaServiceModel = {

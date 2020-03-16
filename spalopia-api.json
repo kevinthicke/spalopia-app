@@ -2,20 +2,33 @@
   "spa-services": [
     {
       "id": 1,
-      "name": "Masaje a 4 manos 60'",
-      "description": "Este tratamiento consta de varias etapas que buscan estimular el cuerpo para la mejor recepción de las propiedades medicinales de los productos orgánicos utilizados, entre los que se destacan el fango, arcillas, algas o chocolate.",
+      "name": "Masaje clásico o sueco",
+      "description": "Es un masaje occidental común que se aplica de forma vigorosa abarcando grandes zonas en especial los músculos. Utiliza inicialmente el roce, luego el golpeteo, seguidos de amasamiento y fricciones profundas. Tiene los efectos fisiológicos mencionados anteriormente es los masajes básicos, además de relajar las contracturas y las tensiones musculares.",
       "price": 20.5
     },
     {
       "id": 2,
-      "name": "Masaje Facial Relajante 45'",
-      "description": "Masaje facial indicado para reducir tensiones del rostro.",
+      "name": "Masaje transverso profundo o Cyriax",
+      "description": "Este masaje es considerado profundo debido a que logra llegar hasta el tejido conectivo subcutáneo por medio de un vaivén transversal de escasa amplitud con relación al tejido a tratar, se realiza usualmente con los pulpejos de los dedos índice apoyado con el dedo medio. Este masaje tiene como objetivo actuar directamente en el punto exacto de la lesión para recuperar la movilidad normal.",
       "price": 10.33
     },
     {
-      "title": "fdsa",
-      "description": "fds",
-      "id": 3
+      "id": 3,
+      "name": "Drenaje linfático manual",
+      "description": "El sistema linfático creado por Vodder y destacado por Leduc, consiste en evacuar los líquidos excedentes y desechos metabólicos por las vías linfáticas por medio de la estimulación de la contracción de vasos y ganglios linfáticos.",
+      "price": 29.99
+    },
+    {
+      "id": 4,
+      "name": "Masaje reflejo",
+      "description": "Es un tratamiento que combina el estiramiento con la estimulación de determinadas áreas que suelen presentar patología local. Se trata de estirar las diversas capas del tejido conectivo periférico y modificar el medio interno en la zona de excitación por medio de los sistemas cerebroespinal y vegetativo, es decir, es una acción a distancia por vía nerviosa que va desde los tejidos periféricos hasta los órganos internos.",
+      "price": 29.99
+    },
+    {
+      "id": 5,
+      "name": "Masajes relajantes",
+      "description": "En los masajes relajantes se utilizan movimientos suaves y deslizantes que ayudarán a relajarte. El terapeuta moverá sus manos a un ritmo más lento aplicando una presión más suave que en otros tipos de masajes.",
+      "price": 90.99
     }
   ],
   "schedules": [
@@ -29,6 +42,28 @@
             {
               "start": "10:00",
               "end": "16:00"
+            }
+          ]
+        },
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "10:00",
+              "end": "16:00"
+            }
+          ]
+        },
+        {
+          "date": "2020-02-03",
+          "ranges": [
+            {
+              "start": "10:00",
+              "end": "16:00"
+            },
+            {
+              "start": "11:00",
+              "end": "13:00"
             }
           ]
         }
@@ -48,6 +83,105 @@
             {
               "start": "14:00",
               "end": "17:00"
+            }
+          ]
+        },
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "11:00",
+              "end": "13:00"
+            },
+            {
+              "start": "14:00",
+              "end": "17:00"
+            }
+          ]
+        },
+        {
+          "date": "2020-02-05",
+          "ranges": [
+            {
+              "start": "11:00",
+              "end": "13:00"
+            },
+            {
+              "start": "14:00",
+              "end": "17:00"
+            },
+            {
+              "start": "15:00",
+              "end": "17:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "spaServiceId": 3,
+      "data": [
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "12:00",
+              "end": "13:00"
+            },
+            {
+              "start": "15:00",
+              "end": "17:00"
+            },
+            {
+              "start": "18:00",
+              "end": "19:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "spaServiceId": 4,
+      "data": [
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "12:00",
+              "end": "13:00"
+            },
+            {
+              "start": "15:00",
+              "end": "17:00"
+            },
+            {
+              "start": "18:00",
+              "end": "19:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "spaServiceId": 5,
+      "data": [
+        {
+          "date": "2020-02-02",
+          "ranges": [
+            {
+              "start": "12:00",
+              "end": "13:00"
+            },
+            {
+              "start": "15:00",
+              "end": "17:00"
+            },
+            {
+              "start": "18:00",
+              "end": "19:00"
             }
           ]
         }

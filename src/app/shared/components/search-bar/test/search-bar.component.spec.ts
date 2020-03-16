@@ -6,24 +6,24 @@ describe('NavbarComponent', () => {
 
     let component: SearchBarComponent;
     let fixture: ComponentFixture<SearchBarComponent>;
-  
+
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        declarations: [ 
-            SearchBarComponent 
-        ],
-        imports: [
-            FormsModule
-        ]
-      });
-          
-      fixture = TestBed.createComponent(SearchBarComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
+        TestBed.configureTestingModule({
+            declarations: [
+                SearchBarComponent
+            ],
+            imports: [
+                FormsModule
+            ]
+        });
+
+        fixture = TestBed.createComponent(SearchBarComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-  
+
     it('should create', () => {
-      expect(component).toBeTruthy();
+        expect(component).toBeTruthy();
     });
-    
-  });
+
+});

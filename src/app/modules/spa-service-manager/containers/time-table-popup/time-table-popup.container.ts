@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { filter, map, pluck, switchMap, withLatestFrom } from 'rxjs/operators';
-import { IScheduleModel } from '../../../../core/models/schedule.model';
-import { SpaServiceSelectedService } from '../../../../core/services/event-bus/spa-service-selected.service';
-import { ScheduleService } from '../../../../core/services/schedule/schedule.service';
+import { IScheduleModel } from '@app-core/models/schedule.model';
+import { SpaServiceSelectedService } from '@app-core/services/event-bus/spa-service-selected.service';
+import { ScheduleService } from '@app-core/services/schedule/schedule.service';
 import { joinToAddSpaServiceName } from '../../utils/join-to-add-spa-service-name/join-to-add-spa-service-name';
 
 @Component({
