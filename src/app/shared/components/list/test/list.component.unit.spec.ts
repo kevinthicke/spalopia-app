@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
+import { ListComponent } from '../list.component';
 
-/* describe('ListComponent', () => {
+describe('ListComponent', () => {
+
   let component: ListComponent;
 
   beforeEach(() => {
@@ -13,7 +14,8 @@ import { ListComponent } from './list.component';
     expect(component).toBeTruthy();
   });
 
-  it('should emit the selected item ID event when "handleSelectedItem" is called correctly', () => {
+  it('should emit the selected item id event when "handleSelectedItem" is called correctly', () => {
+    
     let itemId = null;
     component.selectedItemEvent.subscribe(id => itemId = id);
 
@@ -23,5 +25,5 @@ import { ListComponent } from './list.component';
     expect(itemId).toBe(1);
 
   });
+  
 });
- */

@@ -1,7 +1,7 @@
-/* import { ListItemComponent } from './list-item.component';
+import { ListItemComponent } from '../../list-item/list-item.component';
 
+describe('ListItemComponent', () => {
 
- describe('ListItemComponent', () => {
   let component: ListItemComponent;
 
   beforeEach(() => {
@@ -13,13 +13,13 @@
   });
 
   it('should emit a "buttonClickEvent" when handleClick is called', () => {
-    
+
     let isButtonClickEventEmitted = false;
     component.buttonClickEvent.subscribe(() => isButtonClickEventEmitted = true);
 
     component.handleClick();
-
     expect(isButtonClickEventEmitted).toBeTruthy();
+  
   });
+
 });
- */

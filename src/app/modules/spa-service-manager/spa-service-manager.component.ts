@@ -5,8 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './spa-service-manager.component.html',
   styleUrls: [ './spa-service-manager.component.less' ]
 })
-export class SpaServiceManagerComponent {
-
-  constructor() { }
-
-}
+export class SpaServiceManagerComponent { }

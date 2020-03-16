@@ -23,21 +23,7 @@ describe('SpaService', () => {
     const service: SpaService = TestBed.get(SpaService);
     expect(service).toBeTruthy();
   });
- /*  
-  it('should retrieve all SpaService via GET', (done) => {
-    
-    
-    service.getAll().subscribe(spaServices => {
-      expect(spaServices).toBeTruthy()
-      done();
-    });
-    
-    const request = httpMock.expectOne('http://localhost:3000/schedules?spaServiceId=1');
-    
-    expect(request.request.method).toBe('GET');
-    request.flush(scheduleMocked);
-
-  }); */
-
+  
+  xit('should retrieve all SpaService via GET', (done) => { });
 
 });

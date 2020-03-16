@@ -8,8 +8,6 @@ import { IListItem } from '../../../../shared/components/list/list.component';
 import { adaptToListItemArray } from '../../utils/adapt-to-list-item/adapt-to-list-item';
 import { joinToBuildSpaServiceMinified } from '../../utils/join-to-build-spa-service-minified/join-to-build-spa-service-minified';
 
-
-
 @Component({
   selector: 'app-spa-service-list-container',
   templateUrl: './spa-service-list.container.html',
@@ -33,7 +31,7 @@ export class SpaServiceListContainer implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.spaServices$ = this.getSpaServiceObs();
+    this.spaServices$ = this.getSpaService();
     this.subSink.sink = this.getSpaServiceSelectionSubscription(this.spaServices$);
     
   }
@@ -42,8 +40,7 @@ export class SpaServiceListContainer implements OnInit, OnDestroy {
     this.subSink.unsubscribe();
   }
 
-
-  getSpaServiceObs(): Observable<IListItem[]> {
+  getSpaService(): Observable<IListItem[]> {
 
     const spaServicesComplete$ = this.totalSpaServices$.pipe(
       switchMap(this.spaService.getAll),

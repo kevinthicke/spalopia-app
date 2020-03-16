@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
 import { adaptToScheduleModel } from '../../adapters/adapt-to-schedule-model';
 import { baseUrl } from '../../const/base-url';
+import { Observable } from 'rxjs';
+import { IScheduleModel } from '../../models/schedule.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class ScheduleService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getScheduleBySpaServiceId = (spaServiceId: number) => {
+  getScheduleBySpaServiceId = (spaServiceId: number): Observable<IScheduleModel> => {
 
     const params = new HttpParams()
       .set('spaServiceId', spaServiceId.toString());
