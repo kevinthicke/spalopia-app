@@ -1,6 +1,6 @@
-import { trigger, transition, animate, keyframes, style } from '@angular/animations';
+import { trigger, transition, animate, keyframes, style, AnimationTriggerMetadata } from '@angular/animations';
 
-export const zoomOut = trigger('zoomOut', [
+export const zoomOut: AnimationTriggerMetadata = trigger('zoomOut', [
     transition('* => void', [
       animate('500ms ease-out', keyframes([
         style({

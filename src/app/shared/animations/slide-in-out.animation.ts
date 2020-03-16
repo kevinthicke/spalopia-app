@@ -1,6 +1,7 @@
-import { trigger, style, state, transition, animate } from '@angular/animations';
+import { trigger, style, state, transition, animate, AnimationTriggerMetadata } from '@angular/animations';
 
-export const slideInOut = (animationDurationMs: number) => trigger('slideInOut', [
+export const slideInOut = (animationDurationMs: number): AnimationTriggerMetadata => (
+    trigger('slideInOut', [
     state('void', 
         style({ 
             height: 0, 
@@ -8,5 +9,6 @@ export const slideInOut = (animationDurationMs: number) => trigger('slideInOut',
             paddingBottom: 0 
         })
     ),
-    transition('void <=> *', animate(animationDurationMs)),
-]);
+    transition('void <=> *', animate(`${ animationDurationMs }ms ease-in-out`)),
+    ])
+);
