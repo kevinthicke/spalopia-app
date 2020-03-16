@@ -19,7 +19,8 @@ export class ListItemComponent {
   @Output() buttonClickEvent = new EventEmitter<void>();
   showCardBody = false;
 
-  handleClick(): void {
+  handleClick(event: MouseEvent): void {
+    event.stopPropagation();
     this.buttonClickEvent.emit();
   }
 

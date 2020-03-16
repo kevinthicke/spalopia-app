@@ -6,7 +6,7 @@
             <span *ngIf='extraInfo' id='extra-info' class='btn btn-warning mr-1' disabled>
                 {{ extraInfo }}
             </span>
-            <button id='button' [class]='buttonClass' (click)='handleClick()'>
+            <button id='button' [class]='buttonClass' (click)='handleClick($event)'>
                 {{ buttonText }}
             </button>
         </div>
