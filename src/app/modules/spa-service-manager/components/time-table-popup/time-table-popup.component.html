@@ -1,10 +1,10 @@
 <div *ngIf='schedule' class='card p-3'>
-	<!-- <pre>
-		{{ schedule | json }}
-	</pre> -->
+	
 	<div class='d-flex justify-content-between mt-2 mb-3'>
 		<h5>{{ schedule.spaServiceMini.name }}</h5>
-		<button class='btn btn-danger btn-sm' (click)='closePopup()'>Cerrar</button>
+		<button class='badge badge-pill badge-danger badge-sm' (click)='closePopup()'>
+			<svg-icon src="assets/svg/close.svg" [svgStyle]="{ 'width.px': 10, 'margin-top': '2px', 'margin-right': '1px' }"></svg-icon>
+		</button>
 	</div>
 	<table class="table table-bordered p-1">
 		<thead>

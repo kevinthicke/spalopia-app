@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TimeTablePopupComponent } from '../time-table-popup.component';
+import { AngularSvgIconModule, SvgIconComponent } from 'angular-svg-icon';
 
 describe('TimeTableComponent', () => {
 
@@ -10,7 +11,13 @@ describe('TimeTableComponent', () => {
   beforeEach(() => {
 
     TestBed.configureTestingModule({
-      declarations: [ TimeTablePopupComponent ]
+      imports: [
+        AngularSvgIconModule.forRoot()
+      ],
+      declarations: [ 
+        SvgIconComponent,
+        TimeTablePopupComponent 
+      ]
     });
 
     fixture = TestBed.createComponent(TimeTablePopupComponent);

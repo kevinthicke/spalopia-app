@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { baseUrl } from '../../const/base-url';
 import { adaptToSpaServiceModel, adaptToSpaceServiceModelList } from '../../adapters/adapt-to-spa-service-model';
 import { ISpaServiceModel } from '../../models/spa-service.model';
@@ -27,6 +27,7 @@ export class SpaService {
       .pipe(
         map(adaptToSpaceServiceModelList)
       );
+
   };
 
   getByName = (name: string): Observable<ISpaServiceModel[]> => {
@@ -35,10 +36,10 @@ export class SpaService {
       .set('name_like', name.toString());
 
     return this.httpClient
-    .get(this.url, { params })
-    .pipe(
-      map(adaptToSpaceServiceModelList)
-    );
+      .get(this.url, { params })
+      .pipe(
+        map(adaptToSpaceServiceModelList)
+      );
 
   }
 
@@ -53,5 +54,7 @@ export class SpaService {
       .pipe(
         map(adaptToSpaceServiceModelList)
       );
+
   }
+  
 }
