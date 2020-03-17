@@ -8,6 +8,7 @@ import { ListToolbarComponent } from './components/list-toolbar/list-toolbar.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimeTablePopupComponent } from './components/time-table-popup/time-table-popup.component';
 import { TimeTablePopupContainer } from './containers/time-table-popup/time-table-popup.container';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TimeTablePopupContainer } from './containers/time-table-popup/time-tabl
   imports: [
     CommonModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularSvgIconModule.forRoot()
   ],
   exports: [
     SpaServiceManagerComponent

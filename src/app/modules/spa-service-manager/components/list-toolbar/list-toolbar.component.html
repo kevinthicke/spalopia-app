@@ -1,10 +1,17 @@
 <div class='d-flex justify-content-between'>
+
     <div class='mt-2 mb-2'>
-        <button class='btn btn-primary mr-1 mb-1' (click)='handleOrderMethod("desc")'>-</button>
-        <button class='btn btn-primary ml-1 mb-1' (click)='handleOrderMethod("asc")'>+</button>
+        <button class='btn btn-primary mr-1 mb-1' (click)='handleOrderMethod("desc")'>
+            <svg-icon src="assets/svg/sort-down.svg" [svgStyle]="{ 'width.px': 10 }"></svg-icon>
+        </button>
+        <button class='btn btn-primary ml-1 mb-1' (click)='handleOrderMethod("asc")'>
+            <svg-icon src="assets/svg/sort-up.svg" [svgStyle]="{ 'width.px': 10 }"></svg-icon>
+        </button>
     </div>
+
     <app-search-bar 
         position='right' 
         (searchValueEvent)='handleSearchValue($event)'>
     </app-search-bar>
+    
 </div>
