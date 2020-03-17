@@ -1,3 +1,4 @@
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AngularSvgIconModule.forRoot()
   ],
   exports: [
     NavbarComponent,

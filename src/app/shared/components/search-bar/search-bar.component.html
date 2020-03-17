@@ -6,10 +6,12 @@
         name='value'
         #value='ngModel'
         type='search' 
-        placeholder='Search' 
-        aria-label='Search'>
+        placeholder='Buscar' 
+        aria-label='Buscar'>
     <button 
         (click)='handleOnChange(value)'
-        class='btn btn-outline-success my-2 my-sm-0' 
-        type='submit'>Buscar</button>
+        class='btn btn-outline-success pb-2' 
+        type='submit'>
+        <svg-icon src="assets/svg/search.svg" [svgStyle]="{ 'width.px': 17 }"></svg-icon>
+    </button>
 </form>
